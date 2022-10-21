@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .name {
   position: relative;
-  animation: move-text-color 0.65s forwards;
+  animation: move-text-color 0.40s forwards;
   bottom: -1em;
   opacity: 0;
 }

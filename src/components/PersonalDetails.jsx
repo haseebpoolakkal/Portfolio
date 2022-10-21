@@ -1,68 +1,78 @@
 import React from "react";
 import { SiGmail } from "react-icons/si";
-import {
-  FaLinkedinIn,
-  FaInstagram,
-  FaWhatsapp,
-  FaGithub,
-  FaStackOverflow,
-} from "react-icons/fa";
-import { FiTwitter } from "react-icons/fi";
 import { MdLocationPin } from "react-icons/md";
 import SocialMediaIcon from "./SocialMediaIcon";
-import '../App.css';
+import "../App.css";
+import { motion } from "framer-motion";
+import { SocialMediaList } from "../data/SocialMediaList";
 
 const PersonalDetails = () => {
   const name = "Hi, I am Aseeb P";
+  const containerVarient = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVarient = {
+    hidden: { scale: 0, opacity: 0 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 300, damping: 10 },
+    },
+  };
   return (
     <>
       <div className="flex flex-col justify-center w-full px-10 py-2">
         <div>
-          <div className="flex justify-start w-auto">
-            <SocialMediaIcon
-              icon={<FaGithub className="fill-white" />}
-              link="https://github.com/haseebpoolakkal"
-            />
-            <SocialMediaIcon
-              icon={<FaStackOverflow className="fill-white" />}
-              link="https://stackoverflow.com/users/11217615/aseeb"
-            />
-            <SocialMediaIcon
-              icon={<FaLinkedinIn className="fill-white" />}
-              link="https://www.linkedin.com/in/aseeb-p-5baa65171"
-            />
-            <SocialMediaIcon
-              icon={<FaInstagram className="fill-white" />}
-              link="https://www.instagram.com/a53eb/"
-            />
-            <SocialMediaIcon
-              icon={<FiTwitter className="fill-white" />}
-              link="https://twitter.com/haseebpoolakkal"
-            />
-            <SocialMediaIcon
-              icon={<FaWhatsapp className="fill-white" />}
-              link="https://wa.me/918606459264"
-            />
-          </div>
+          <motion.div
+            variants={containerVarient}
+            initial="hidden"
+            animate="show"
+            className="flex justify-start w-auto"
+          >
+            {SocialMediaList.map((item, index) => (
+              <motion.div variants={itemVarient} key={index}>
+                <SocialMediaIcon icon={item.icon} link={item.link} />
+              </motion.div>
+            ))}
+          </motion.div>
           <div className="mt-3">
             <h1 className="text-2xl text-white font-bold md:text-3xl">
               {name.split("").map((char, index) => {
                 let style = { "animation-delay": 0.5 + index / 10 + "s" };
                 return (
-                  <span className="name" aria-hidden="true" key={index} style={style}>
+                  <span
+                    className="name"
+                    aria-hidden="true"
+                    key={index}
+                    style={style}
+                  >
                     {char}
                   </span>
                 );
               })}
             </h1>
-            {/* <h1 className="text-2xl text-white font-bold md:text-3xl">
-              Hi, I am Aseeb P
-            </h1> */}
-            <h6 className="text-1xl py-1 text-white">
+            <motion.h6
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.3 }}
+              className="text-1xl py-1 text-white"
+            >
               Im a Senior Systems Engineer at Infosys
-            </h6>
+            </motion.h6>
           </div>
-          <div className="my-2">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.3 }}
+            className="my-2"
+          >
             <div className="flex items-center">
               <MdLocationPin className="fill-accent" />
               <p className="text-white font-bold ml-2 cursor-default">
@@ -80,7 +90,7 @@ const PersonalDetails = () => {
                 haseebpoolakkal@gmail.com
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

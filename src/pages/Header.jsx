@@ -18,7 +18,7 @@ const Header = () => {
               transition={{duration: 0.8}}
               src={profile}
               alt="/"
-              className="w-[40vh] ml-5 md:w-[50vh] md:my-0 rounded-md"
+              className="w-[40vh] mx-5 md:w-[50vh] md:my-0 rounded-md"
             />
           </div>
         </div>

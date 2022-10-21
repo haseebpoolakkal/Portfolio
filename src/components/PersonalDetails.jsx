@@ -10,8 +10,10 @@ import {
 import { FiTwitter } from "react-icons/fi";
 import { MdLocationPin } from "react-icons/md";
 import SocialMediaIcon from "./SocialMediaIcon";
+import '../App.css';
 
 const PersonalDetails = () => {
+  const name = "Hi, I am Aseeb P";
   return (
     <>
       <div className="flex flex-col justify-center w-full px-10 py-2">
@@ -44,8 +46,18 @@ const PersonalDetails = () => {
           </div>
           <div className="mt-3">
             <h1 className="text-2xl text-white font-bold md:text-3xl">
-              Hi, I am Aseeb P
+              {name.split("").map((char, index) => {
+                let style = { "animation-delay": 0.5 + index / 10 + "s" };
+                return (
+                  <span className="name" aria-hidden="true" key={index} style={style}>
+                    {char}
+                  </span>
+                );
+              })}
             </h1>
+            {/* <h1 className="text-2xl text-white font-bold md:text-3xl">
+              Hi, I am Aseeb P
+            </h1> */}
             <h6 className="text-1xl py-1 text-white">
               Im a Senior Systems Engineer at Infosys
             </h6>
@@ -59,7 +71,12 @@ const PersonalDetails = () => {
             </div>
             <div className="flex items-center">
               <SiGmail className="fill-accent" />
-              <p className="text-white font-bold ml-2 cursor-pointer"  onClick={() => window.location = 'mailto:haseebpoolakkal@domain.com'}>
+              <p
+                className="text-white font-bold ml-2 cursor-pointer"
+                onClick={() =>
+                  (window.location = "mailto:haseebpoolakkal@domain.com")
+                }
+              >
                 haseebpoolakkal@gmail.com
               </p>
             </div>

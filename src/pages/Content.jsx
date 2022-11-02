@@ -1,4 +1,5 @@
 import React from "react";
+import About from "../components/About";
 import Services from "../components/Services";
 import Skills from "../components/Skills";
 import Works from "../components/Works";
@@ -6,6 +7,9 @@ import Works from "../components/Works";
 const Content = () => {
   return (
     <>
+      <div id="about" className="md:h-screen md:flex md:justify-center md:items-center">
+        <About />
+      </div>
       <div id="services" className="md:h-screen md:flex md:justify-center md:items-center">
         <Services />
       </div>

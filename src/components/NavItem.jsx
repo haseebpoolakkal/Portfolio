@@ -23,6 +23,9 @@ const NavItem = ({ id, name }) => {
       x: -100,
       opacity: 0,
       scale: 0.8,
+      transition: {
+        delay: 0.3
+      }
     });
   };
 
@@ -39,7 +42,7 @@ const NavItem = ({ id, name }) => {
       <motion.p
         initial={{ opacity: 0 }}
         animate={animation}
-        className="text-white pt-4 -z-10"
+        className="text-white pt-4 -z-10 pointer-events-none"
       >
         {name}
       </motion.p>

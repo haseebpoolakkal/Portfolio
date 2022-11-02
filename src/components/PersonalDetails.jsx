@@ -45,7 +45,7 @@ const PersonalDetails = () => {
           <div className="mt-3">
             <h1 className="text-2xl text-white font-bold md:text-3xl">
               {name.split("").map((char, index) => {
-                let style = { "animation-delay": 0.5 + index / 10 + "s" };
+                let style = { "animationDelay": 0.5 + index / 10 + "s" };
                 return (
                   <span
                     className="name"

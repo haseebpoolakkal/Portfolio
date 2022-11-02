@@ -1,0 +1,35 @@
+.button-hover {
+    position: relative;
+    display: inline-block;
+    color: rgb(203 213 225 / 1);
+    font-size: 1em;
+    text-decoration: none;
+    border: 2px solid #32395E;
+    padding: 5px 30px;
+    z-index: 1;
+    overflow: hidden;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.button-hover:hover {
+    color: #22263B;
+    transition-delay: 0s,1s;
+}
+
+.button-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0%;
+    height: 100%;
+    background:  rgb(203 213 225 / 1);
+    transform: skewX(35deg);
+    transition: 1s;
+    z-index: -1;
+}
+
+.button-hover:hover::before {
+    width: 160%;
+}

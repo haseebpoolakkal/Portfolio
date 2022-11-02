@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { sendEmail } from "../services/emailSerive";
 import { motion } from "framer-motion";
 import useCheckMobile from "../hooks/useCheckMobile";
+import './Contacts.css';
+
 const Contacts = () => {
   let intialForm = {
     name: "",
@@ -104,13 +106,7 @@ const Contacts = () => {
           ></textarea>
         </div>
         <div className="flex justify-center">
-          <button
-            className="border border-border px-10 py-1 text-sm text-slate-300 mt-3 hover:bg-slate-300 hover:text-slate-800 hover:border-slate-800"
-            type="submit"
-            onClick={submitForm}
-          >
-            Submit
-          </button>
+          <p onClick={submitForm} className="button-hover">Submit</p>
         </div>
       </form>
     </motion.div>

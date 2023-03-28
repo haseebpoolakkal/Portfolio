@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sendEmail } from "../services/emailSerive";
+import { sendEmail } from "../services/emailService";
 import { motion } from "framer-motion";
 import useCheckMobile from "../hooks/useCheckMobile";
 import './Contacts.css';

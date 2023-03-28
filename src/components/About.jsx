@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import useCheckMobile from "../hooks/useCheckMobile";
+import { calculateYearsBetweenDates } from "../services/date.service";
+
 const About = () => {
+  const joiningDate = new Date("2021-03-03");
+  const experience = calculateYearsBetweenDates(joiningDate, new Date());
   const isMobile = useCheckMobile();
   const scrollAnim = !isMobile
     ? {
@@ -45,7 +49,7 @@ const About = () => {
       <div className="flex justify-center items-center">
         <p className="text-left text-slate-300 mt-8">
           My name is Aseeb P, and I have been working as a Senior Systems
-          Engineer at Infosys for the last 1.7 years. During this time, I have
+          Engineer at Infosys for the last {experience} years. During this time, I have
           worked on a wide range of projects involving web application
           development, mobile application development, backend development,
           system integration, CICD deployments and managing servers. I have also

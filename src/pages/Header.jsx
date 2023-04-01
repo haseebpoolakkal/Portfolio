@@ -2,6 +2,7 @@ import React from "react";
 import PersonalDetails from "../components/PersonalDetails";
 import profile from "../assets/images/profile.jpg";
 import SideNav from "../components/SideNav";
+import ResumeCard from "../components/ResumeCard";
 import { motion } from 'framer-motion';
 const Header = () => {
   return (
@@ -9,6 +10,9 @@ const Header = () => {
         <div className="grid md:grid-cols-2 max-w-[1240px] m-auto">
           <div className="fixed hidden md:block left-0 bottom-1">
             <SideNav />
+          </div>
+          <div className="fixed z-50 bottom-0 right-0">
+            <ResumeCard />
           </div>
           <PersonalDetails />
           <div className="flex justify-center">
